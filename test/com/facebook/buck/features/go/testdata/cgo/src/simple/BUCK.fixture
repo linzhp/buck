@@ -8,5 +8,6 @@ cgo_library(
     name = "cgo",
     package_name = "main",
     srcs = ["cgosrc.go"],
+    link_style = "static",
     deps = ["//src/cxx:lib"],
 )
