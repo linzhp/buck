@@ -300,6 +300,7 @@ public class GoBinaryIntegrationTest {
     }
   }
 
+  @Test
   public void cgoIncludeHeaderFromSamePackage() throws IOException {
     ProjectWorkspace workspace = TestDataHelper.createProjectWorkspaceForScenario(this, "cgo", tmp);
     workspace.setUp();
