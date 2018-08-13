@@ -1,0 +1,7 @@
+cgo_library(
+  name='lib',
+  package_name='different_package/go-sqlite',
+  srcs=['cgosrc.go'],
+  go_srcs=['bar.go'],
+  visibility=['PUBLIC']
+)

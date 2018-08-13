@@ -310,4 +310,13 @@ public class GoBinaryIntegrationTest {
         workspace.runBuckCommand("run", "//:bin").assertSuccess().getStdout(),
         Matchers.containsString("foo"));
   }
+
+  @Test
+  public void cgoLibraryWithDifferentPackageName() throws IOException {
+    // Similar scenario to github.com/mattn/go-sqlite3
+    ProjectWorkspace workspace =
+        TestDataHelper.createProjectWorkspaceForScenario(this, "cgo", tmp);
+    workspace.setUp();
+    workspace.runBuckCommand("run", "//src/different_package/cli:cli").assertSuccess();
+  }
 }
